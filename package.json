@@ -1,0 +1,27 @@
+{
+  "name": "10-oop-team-profile-generator",
+  "version": "1.0.0",
+  "description": "To generate a html with staff details",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.1",
+    "jest": "^26.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/heganjr/OOP-TeamProfileGenerator.git"
+  },
+  "author": "heganjr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heganjr/OOP-TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/heganjr/OOP-TeamProfileGenerator#readme"
+}
