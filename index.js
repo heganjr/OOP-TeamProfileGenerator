@@ -130,9 +130,60 @@ function createEngineer() {
   });
 }
 const internQuestions = [
-    
+  {
+    type: "input",
+    name: "name",
+    message: "What is the Intern's Name?",
+  },
+  {
+    type: "input",
+    name: "id",
+    message: "What is the Intern's employee id?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is the Intern's email?",
+  },
 
-]
+  {
+    type: "input",
+    name: "school",
+    message: "What School does the Intern attend?",
+  },
+  {
+    type: "list",
+    name: "task",
+    message: "What would you like to do next?",
+    choices: ["Add Manager", "Add Engineer", "Generate HTML"],
+  },
+];
+
+function createIntern() {
+  inquirer.prompt(internQuestions).then((answers) => {
+    const newIntern = new Intern(
+      answers.name,
+      answers.id,
+      answers.email,
+      answers.school
+    );
+
+    teamArray.push(newIntern);
+    console.log("TeamArray with Intern", teamArray);
+
+    switch (answers.task) {
+      case "Add Manager":
+        createManager();
+        break;
+      case "Add Engineer":
+        createEngineer();
+        break;
+      case "Generate HTML":
+        generateHtml();
+        break;
+    }
+  });
+}
 
 createManager();
 
@@ -154,13 +205,13 @@ createManager();
 // menu to add engineer, intern or finish - Done
 
 // Add engineer:
-//  - name - ID - email - github username
+//  - name - ID - email - github username - Done
 
-// menu to add manager, intern or finish
+// menu to add manager, intern or finish - Done
 
-// Add intern:
-// - name - ID - email - school
+// Add intern: - Done
+// - name - ID - email - school - Done
 
-// menu to add engineer, intern or finish
+// menu to add engineer, intern or finish - Done
 
 // The html is generated
