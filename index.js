@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const generateHtml = require("./src/generateHTML");
 // classes are a template - I want a new template and I want to use the xxx.class this is what it needs to run
 // inquirer prompts go here
 // src - where templates go (generateHTML) - (GenerateCard Based on Enginner, Manager, Intern)
@@ -41,8 +42,10 @@ const managerQuestions = [
 
 // Manager questions
 const teamArray = [];
+// an array that holds all the information
 
 function createManager() {
+    
   inquirer.prompt(managerQuestions).then((answers) => {
     const newManager = new Manager(
       answers.name,
@@ -65,7 +68,7 @@ function createManager() {
         break;
 
       case "Generate HTML":
-        generateHtml();
+        writeToHtml();
         break;
     }
   });
@@ -124,7 +127,7 @@ function createEngineer() {
         break;
 
       case "Generate HTML":
-        generateHtml();
+        writeToHtml();
         break;
     }
   });
@@ -179,13 +182,26 @@ function createIntern() {
         createEngineer();
         break;
       case "Generate HTML":
-        generateHtml();
+        writeToHtml();
         break;
     }
   });
 }
 
 createManager();
+
+function writeToHtml() {
+  console.log(teamArray);
+  let htmlTemplate = generateHtml(teamArray);
+  fs.writeFile("./dist/teamprofile.html", htmlTemplate, (err) =>
+    err ? console.error(err) : console.log("Success!")
+  );
+}
+
+// function executeHtmlGeneration(){
+//     writeToHtml("./dist/teamprofile.js", generateHtml)
+
+// }
 
 // Adding a newManager to the manager class
 
