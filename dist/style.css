@@ -1,0 +1,67 @@
+html {
+  height: full;
+  font-family:Arial, Helvetica, sans-serif ;
+  background: linear-gradient(180deg, aqua 60%, grey 95%);
+}
+
+header {
+    background: rgba(105, 105, 158, 0.55);
+    text-align: center;
+    height: 10vh;
+    border: 5px solid;
+    box-shadow: 10px 10px 60px 10px;
+
+}
+
+h1 {
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-content:space-between;
+    padding: 20px;
+    margin-left: 23%
+}
+
+.card {
+
+    text-align: center;
+    margin-top: 50px;
+    height: 30vh;
+    width: 50vw;
+    background: gold;
+    border: navy 5px dashed;
+    box-shadow: 5px 10px 60px 5px;
+
+
+}
+
+.manager-header {
+    margin: 0px;
+    background: red;
+    color: white;
+    box-shadow: 10px 10px 60px 10px;
+
+}
+
+.engineer-header {
+    margin: 0px;
+    background: orange;
+    color: white;
+    box-shadow: 10px 10px 60px 10px;
+
+}
+
+.intern-header {
+    margin: 0px;
+    background: green;
+    color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 60px 10px;
+
+}
+
+
+
+
